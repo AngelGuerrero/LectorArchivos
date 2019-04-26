@@ -49,10 +49,7 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSelectedFile = new System.Windows.Forms.Label();
             this.lblLine_2 = new System.Windows.Forms.Label();
-            this.txtLog = new System.Windows.Forms.TextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,20 +57,27 @@
             this.acercaDelProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.chklbxDataBases = new System.Windows.Forms.CheckedListBox();
+            this.chklbxFiles = new System.Windows.Forms.CheckedListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtLog = new System.Windows.Forms.RichTextBox();
             this.statusStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tblLayPanelAuthentication.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 483);
+            this.statusStrip.Location = new System.Drawing.Point(0, 647);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(457, 22);
             this.statusStrip.TabIndex = 1;
@@ -90,6 +94,7 @@
             this.openFileDialog.DefaultExt = "sql";
             this.openFileDialog.FileName = "StoreProcedure";
             this.openFileDialog.Filter = "Sql files(*.sql)| *.sql| All files(*.*)| *.*";
+            this.openFileDialog.Multiselect = true;
             this.openFileDialog.RestoreDirectory = true;
             this.openFileDialog.Title = "Seleccione un procedimiento almacenado";
             // 
@@ -163,7 +168,7 @@
             // lblTitulo
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitulo.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
@@ -180,19 +185,21 @@
             this.flowLayoutPanel1.Controls.Add(this.btnConnect);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 453);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 617);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(457, 30);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // btnAccept
             // 
+            this.btnAccept.Enabled = false;
             this.btnAccept.Location = new System.Drawing.Point(379, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 8;
             this.btnAccept.Text = "&Ejecutar";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
@@ -304,41 +311,14 @@
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.lblSelectedFile);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 346);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(445, 20);
-            this.flowLayoutPanel2.TabIndex = 7;
-            // 
-            // lblSelectedFile
-            // 
-            this.lblSelectedFile.AutoSize = true;
-            this.lblSelectedFile.Location = new System.Drawing.Point(1, 1);
-            this.lblSelectedFile.Margin = new System.Windows.Forms.Padding(1);
-            this.lblSelectedFile.Name = "lblSelectedFile";
-            this.lblSelectedFile.Size = new System.Drawing.Size(129, 13);
-            this.lblSelectedFile.TabIndex = 0;
-            this.lblSelectedFile.Text = "Sin archivo seleccionado.";
-            // 
             // lblLine_2
             // 
             this.lblLine_2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblLine_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblLine_2.Location = new System.Drawing.Point(11, 449);
+            this.lblLine_2.Location = new System.Drawing.Point(11, 549);
             this.lblLine_2.Name = "lblLine_2";
             this.lblLine_2.Size = new System.Drawing.Size(440, 2);
             this.lblLine_2.TabIndex = 9;
-            // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(6, 371);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ReadOnly = true;
-            this.txtLog.Size = new System.Drawing.Size(445, 54);
-            this.txtLog.TabIndex = 10;
             // 
             // toolStripMenuItem1
             // 
@@ -389,23 +369,81 @@
             // 
             // chklbxDataBases
             // 
+            this.chklbxDataBases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chklbxDataBases.Enabled = false;
             this.chklbxDataBases.FormattingEnabled = true;
-            this.chklbxDataBases.Location = new System.Drawing.Point(6, 244);
+            this.chklbxDataBases.Location = new System.Drawing.Point(3, 16);
             this.chklbxDataBases.Name = "chklbxDataBases";
-            this.chklbxDataBases.Size = new System.Drawing.Size(445, 94);
+            this.chklbxDataBases.Size = new System.Drawing.Size(437, 93);
+            this.chklbxDataBases.Sorted = true;
             this.chklbxDataBases.TabIndex = 11;
+            this.chklbxDataBases.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chklbxDataBases_ItemCheck);
+            // 
+            // chklbxFiles
+            // 
+            this.chklbxFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chklbxFiles.FormattingEnabled = true;
+            this.chklbxFiles.HorizontalScrollbar = true;
+            this.chklbxFiles.Location = new System.Drawing.Point(3, 16);
+            this.chklbxFiles.Name = "chklbxFiles";
+            this.chklbxFiles.Size = new System.Drawing.Size(437, 99);
+            this.chklbxFiles.Sorted = true;
+            this.chklbxFiles.TabIndex = 12;
+            this.chklbxFiles.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chklbxFiles_ItemCheck);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.chklbxDataBases);
+            this.groupBox1.Location = new System.Drawing.Point(8, 231);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(443, 112);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Bases de datos";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.chklbxFiles);
+            this.groupBox2.Location = new System.Drawing.Point(8, 349);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(443, 118);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Archivos seleccionados";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtLog);
+            this.groupBox3.Location = new System.Drawing.Point(8, 478);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(443, 115);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Resultado";
+            // 
+            // txtLog
+            // 
+            this.txtLog.BackColor = System.Drawing.Color.White;
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLog.Location = new System.Drawing.Point(3, 16);
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ReadOnly = true;
+            this.txtLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtLog.Size = new System.Drawing.Size(437, 96);
+            this.txtLog.TabIndex = 0;
+            this.txtLog.Text = "";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(457, 505);
-            this.Controls.Add(this.chklbxDataBases);
-            this.Controls.Add(this.txtLog);
+            this.ClientSize = new System.Drawing.Size(457, 669);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblLine_2);
-            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tblLayPanelAuthentication);
             this.Controls.Add(this.panel1);
@@ -429,10 +467,11 @@
             this.panel1.ResumeLayout(false);
             this.tblLayPanelAuthentication.ResumeLayout(false);
             this.tblLayPanelAuthentication.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,11 +498,8 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label lblSelectedFile;
         private System.Windows.Forms.Label lblLine_1;
         private System.Windows.Forms.Label lblLine_2;
-        private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
@@ -471,6 +507,11 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDelProgramaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.CheckedListBox chklbxDataBases;
+        private System.Windows.Forms.CheckedListBox chklbxFiles;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RichTextBox txtLog;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace LecturaDeArchivos
         {
             //
             // Inicialmente la cadena de conexión de tipo Windows Authentication
-            StringConnection = "WIN";
+            ConnectionString = "WIN";
         }
 
         public bool Connected { get; private set; }
@@ -29,32 +30,35 @@ namespace LecturaDeArchivos
         private string Password { get; set; }
 
 
-        private string _stringConnection;
-        private string StringConnection
+        private string _connectionString;
+        private string ConnectionString
         {
-            get { return _stringConnection; }
+            get { return _connectionString; }
             set
             {
                 if (value == "WIN")
                 {
-                    _stringConnection = "Data Source=" + Server + ";Initial Catalog=" + DataBase + "; Integrated Security=true;";
+                    _connectionString = "Data Source=" + Server + ";Initial Catalog=" + DataBase + "; Integrated Security=true;";
                 }
                 else if (value == "SQL")
                 {
-                    _stringConnection = "Data Source=" + Server + ";Initial Catalog=" + DataBase + ";User ID=" + User + ";Password=" + Password + ";";
+                    _connectionString = "Data Source=" + Server + ";Initial Catalog=" + DataBase + ";User ID=" + User + ";Password=" + Password + ";";
                 }
             }
         }
+
 
 
         public bool TestConnectionnWindowsAuth(string pServer, ref string pMessage, string pDataBase = "master")
         {
             Server = pServer;
             DataBase = pDataBase;
-            StringConnection = "WIN";
+            ConnectionString = "WIN";
 
-            return Connect(StringConnection, ref pMessage);
+            return Connect(ConnectionString, ref pMessage);
         }
+
+
 
         public bool TestConnectionSql(string pServer, string pUser, string pPassword, ref string pMessage, string pNombreBD = "master")
         {
@@ -62,9 +66,69 @@ namespace LecturaDeArchivos
             DataBase = pNombreBD;
             User = pUser;
             Password = pPassword;
-            StringConnection = "SQL";
+            ConnectionString = "SQL";
 
-            return Connect(StringConnection, ref pMessage);
+            return Connect(ConnectionString, ref pMessage);
+        }
+
+
+
+        public bool CargarScript(string pPath, string pDatabase, string pAuthentication, ref string pMessage)
+        {
+            DataBase = pDatabase;
+
+            if (pAuthentication.Equals("Windows Authentication"))
+            {
+                ConnectionString = "WIN";
+            }
+            else if (pAuthentication.Equals("SQL Server Authentication"))
+            {
+                ConnectionString = "SQL";
+            }
+
+            return CargarScript(pPath, ref pMessage);
+        }
+
+
+        public bool CargarScript(string pPath, ref string pMessage)
+        {
+            bool retval = true;
+
+            FileInfo file = new FileInfo(pPath);
+
+            string script;
+            using (var reader = file.OpenText())
+            {
+                script = reader.ReadToEnd();
+                script = script.Replace("GO", "");
+            }
+
+
+            try
+            {
+                pMessage = $"--------------- Servidor: {Server} - Base de datos: {DataBase} --------------- {Environment.NewLine}{Environment.NewLine}";
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                using (SqlCommand command = new SqlCommand(script, conn))
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+
+                    pMessage += $"--- Archivo: '{file}' {Environment.NewLine} Ok. {Environment.NewLine}";
+                }
+            }
+            catch (Exception ex)
+            {
+                pMessage += $"--- Error en archivo: '{file}' {Environment.NewLine} Error: '{ex.Message}' {Environment.NewLine}";
+                retval = false;
+
+                if (ex.InnerException != null)
+                {
+                    pMessage += ex.InnerException.Message;
+                }
+            }
+
+            return retval;
         }
 
 
@@ -95,7 +159,7 @@ namespace LecturaDeArchivos
 
             try
             {
-                using (SqlConnection con = new SqlConnection(StringConnection))
+                using (SqlConnection con = new SqlConnection(ConnectionString))
                 {
                     SqlCommand command = new SqlCommand(query, con);
                     command.CommandTimeout = 0;
@@ -108,7 +172,7 @@ namespace LecturaDeArchivos
                     reader.Close();
                     con.Close();
 
-                    pMessage = "Se cargaron correctamente las bases de datos.";
+                    pMessage = "Se cargaron las bases de datos correctamente.";
                     pError = false;
                 }
             }
@@ -126,18 +190,18 @@ namespace LecturaDeArchivos
 
         private SqlConnection ConectarSQL()
         {
-            StringConnection = "SQL";
+            ConnectionString = "SQL";
 
-            return new SqlConnection(StringConnection);
+            return new SqlConnection(ConnectionString);
         }
 
 
 
         private SqlConnection ConectarWindowsAuth()
         {
-            StringConnection = "WIN";
+            ConnectionString = "WIN";
 
-            return new SqlConnection(StringConnection);
+            return new SqlConnection(ConnectionString);
         }
 
 
