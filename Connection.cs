@@ -11,9 +11,11 @@ namespace LecturaDeArchivos
         public Connection()
         {
             //
-            // Inicialmente la cadena de conexión de tipo Windows Authentication
+            // Initialize with Windows Authentication
             ConnectionString = "WIN";
         }
+
+        #region PROPERTIES
 
         public bool Connected { get; private set; }
 
@@ -41,7 +43,9 @@ namespace LecturaDeArchivos
                     _connectionString = "Data Source=" + Server + ";Initial Catalog=" + DataBase + ";User ID=" + User + ";Password=" + Password + ";";
                 }
             }
-        }
+        } 
+
+        #endregion
 
 
 
@@ -69,7 +73,7 @@ namespace LecturaDeArchivos
 
 
 
-        public bool CargarScript(string pPath, string pDatabase, string pAuthentication, ref string pMessage)
+        public bool LoadScript(string pPath, string pDatabase, string pAuthentication, ref string pMessage)
         {
             DataBase = pDatabase;
 
@@ -82,11 +86,11 @@ namespace LecturaDeArchivos
                 ConnectionString = "SQL";
             }
 
-            return CargarScript(pPath, ref pMessage);
+            return LoadScript(pPath, ref pMessage);
         }
 
 
-        public bool CargarScript(string pPath, ref string pMessage)
+        public bool LoadScript(string pPath, ref string pMessage)
         {
             bool retval = true;
 
@@ -102,7 +106,7 @@ namespace LecturaDeArchivos
 
             try
             {
-                pMessage = $"--------------- Servidor: {Server} - Base de datos: {DataBase} --------------- {Environment.NewLine}{Environment.NewLine}";
+                pMessage = $"--------------- Server: {Server} - Database: {DataBase} --------------- {Environment.NewLine}{Environment.NewLine}";
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 using (SqlCommand command = new SqlCommand(script, conn))
                 {
@@ -110,12 +114,12 @@ namespace LecturaDeArchivos
                     command.ExecuteNonQuery();
                     command.Connection.Close();
 
-                    pMessage += $"--- Archivo: '{file}' {Environment.NewLine} Ok. {Environment.NewLine}";
+                    pMessage += $"--- File: '{file}' {Environment.NewLine} Ok. {Environment.NewLine}";
                 }
             }
             catch (Exception ex)
             {
-                pMessage += $"--- Error en archivo: '{file}' {Environment.NewLine} Error: '{ex.Message}' {Environment.NewLine}";
+                pMessage += $"--- File: '{file}' {Environment.NewLine} Error: '{ex.Message}' {Environment.NewLine}";
                 retval = false;
 
                 if (ex.InnerException != null)
@@ -168,13 +172,13 @@ namespace LecturaDeArchivos
                     reader.Close();
                     con.Close();
 
-                    pMessage = "Se cargaron las bases de datos correctamente.";
+                    pMessage = "Databases loaded succesfully.";
                     pError = false;
                 }
             }
             catch (Exception e)
             {
-                pMessage = $"Error al obtener las bases de datos: {e.Message}";
+                pMessage = $"Error loading databases: {e.Message}";
                 Debug.WriteLine(pMessage);
                 pError = true;
             }
@@ -213,7 +217,7 @@ namespace LecturaDeArchivos
         private bool Connect(string pConStr, ref string pMessage)
         {
             bool retval = false;
-            Debug.WriteLine("Probando la conectividad...");
+            Debug.WriteLine("Testing connectivity...");
 
             try
             {
@@ -221,7 +225,7 @@ namespace LecturaDeArchivos
                 {
                     con.Open();
                     con.Close();
-                    pMessage = "Conexión realizada exitosamente.";
+                    pMessage = "Connected to .";
                     retval = true;
                 }
             }

@@ -10,6 +10,12 @@ namespace LecturaDeArchivos
 {
     public partial class FormMain : Form
     {
+        public FormMain() { InitializeComponent(); }
+
+
+
+        #region PROPERTIES
+
         public Server RemoteServer { get; set; }
 
 
@@ -38,7 +44,7 @@ namespace LecturaDeArchivos
                                                                .ForEach(item => chklbxDataBases.Items.Add(item));
 
                     toolStripStatusLabel.Text = msg;
-                    MessageBox.Show(msg, "Mensaje de conexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(msg, "Connection message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 _showDataBases = chklbxDataBases.Enabled = (!errorResult) ? true : false;
@@ -46,17 +52,17 @@ namespace LecturaDeArchivos
         }
 
 
-
         public List<string> SelectedFiles { get; set; } = new List<string>();
 
 
-        public List<string> SelectedDatabasesList { get; set; } = new List<string>();
+        public List<string> SelectedDatabasesList { get; set; } = new List<string>(); 
 
+        #endregion
 
-        public FormMain() { InitializeComponent(); }
 
 
         private void CheckAllowExecute() => btnAccept.Enabled = ((SelectedFiles.Count >= 1) && (SelectedDatabasesList.Count >= 1)) ? true : false;
+
 
         public void OpenFile()
         {
@@ -80,6 +86,7 @@ namespace LecturaDeArchivos
             CheckAllowExecute();
         }
 
+
         public void ChangeControls(bool state)
         {
             ShowDataBases = state;
@@ -88,7 +95,6 @@ namespace LecturaDeArchivos
             {
                 chklbxDataBases,
                 txtLog,
-                //lblSelectedFile,
                 btnAccept
             };
 
@@ -109,6 +115,50 @@ namespace LecturaDeArchivos
             });
         }
 
+
+        public void ChangeSQLAuthenticationControls(bool pEnabled)
+        {
+            //
+            // Controls for SQL Authentication method
+            List<Control> sqlAuthMethodControls = new List<Control>()
+            {
+                lblUser,
+                txtUser,
+                lblPassword,
+                txtPassword
+            };
+
+            sqlAuthMethodControls.ForEach(control =>
+            {
+                if (control is Label)
+                {
+                    ((Label)control).Enabled = pEnabled;
+                }
+                else if (control is TextBox)
+                {
+                    ((TextBox)control).Enabled = pEnabled;
+                }
+            });
+        }
+
+
+        public void SelectAuthenticationMethod()
+        {
+            //
+            // Reset controls for execute the process
+            ChangeControls(false);
+
+            //
+            // Enable or not, authentication controls method
+            bool state = cbxAuthentication.SelectedItem.Equals("Windows Authentication") ? false : true;
+
+            ChangeSQLAuthenticationControls(state);
+
+            Authentication = cbxAuthentication.SelectedItem.ToString();
+        }
+
+
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             //
@@ -123,9 +173,10 @@ namespace LecturaDeArchivos
             //
             // Selecciona el método de autenticación por defecto
             cbxAuthentication.SelectedIndex = 0;
+            SelectAuthenticationMethod();
         }
-
-        private void AbrirToolStripMenuItem_Click(object sender, EventArgs e) => OpenFile();
+        
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) => OpenFile();
 
         private void TxtServer_TextChanged(object sender, EventArgs e)
         {
@@ -133,17 +184,7 @@ namespace LecturaDeArchivos
             ChangeControls(false);
         }
 
-        private void CbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //
-            // Reinicia los controles para ejecutar el procedimiento
-            ChangeControls(false);
-            //
-            // Habilita o no los controles para autenticación por medio de Sql Server
-            tblLayPanelAuthentication.Enabled = cbxAuthentication.SelectedItem.Equals("Windows Authentication") ? false : true;
-
-            Authentication = cbxAuthentication.SelectedItem.ToString();
-        }
+        private void CbxAuthentication_SelectedIndexChanged(object sender, EventArgs e) => SelectAuthenticationMethod();
 
         private void TxtUser_TextChanged(object sender, EventArgs e) => RemoteServer.User = txtUser.Text;
 
@@ -180,7 +221,7 @@ namespace LecturaDeArchivos
 
         private void BtnConnect_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = "Conectando...";
+            toolStripStatusLabel.Text = "Connecting...";
 
             string message = "";
 
@@ -198,11 +239,12 @@ namespace LecturaDeArchivos
                 ShowDataBases = false;
                 ChangeControls(false);
                 toolStripStatusLabel.Text = message;
+                MessageBox.Show(message, "Error connecting server", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             //
-            // Si la conexión se realizó, trata de cargar las bases de datos
+            // If connected, tries load databases
             ShowDataBases = true;
         }
 
@@ -214,17 +256,13 @@ namespace LecturaDeArchivos
         {
             txtLog.Text = string.Empty;
 
-            //
-            // Recorre las bases de datos seleccionadas
             SelectedDatabasesList.ForEach(database =>
             {
                 string msg = "";
 
-                //
-                // Recorre los archivos seleccionados
                 SelectedFiles.ForEach(file =>
                 {
-                    if (RemoteConnection.CargarScript(file, database, Authentication, ref msg))
+                    if (RemoteConnection.LoadScript(file, database, Authentication, ref msg))
                     {
                         txtLog.AppendText($"{msg}", Color.Green);
                     }
@@ -234,6 +272,8 @@ namespace LecturaDeArchivos
                     }
                 });
             });
+
+            MessageBox.Show("All scripts executed", "Process finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
