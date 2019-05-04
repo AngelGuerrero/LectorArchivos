@@ -1,15 +1,24 @@
-﻿using System;
+﻿using LecturaDeArchivos;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace LecturaDeArchivos
 {
     public partial class FormMain : Form
     {
+        public FormMain() { InitializeComponent(); }
+
+
+
+        #region PROPERTIES
+
         public Server RemoteServer { get; set; }
 
 
@@ -38,7 +47,7 @@ namespace LecturaDeArchivos
                                                                .ForEach(item => chklbxDataBases.Items.Add(item));
 
                     toolStripStatusLabel.Text = msg;
-                    MessageBox.Show(msg, "Mensaje de conexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show(msg, "Connection message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 _showDataBases = chklbxDataBases.Enabled = (!errorResult) ? true : false;
@@ -46,17 +55,29 @@ namespace LecturaDeArchivos
         }
 
 
-
         public List<string> SelectedFiles { get; set; } = new List<string>();
 
 
         public List<string> SelectedDatabasesList { get; set; } = new List<string>();
 
+        #endregion
 
-        public FormMain() { InitializeComponent(); }
+
+
+        private string _databasefocused;
+        public string DataBaseFocused
+        {
+            get { return _databasefocused; }
+            set
+            {
+                _databasefocused = value;
+                Debug.WriteLine(value);
+            }
+        }
 
 
         private void CheckAllowExecute() => btnAccept.Enabled = ((SelectedFiles.Count >= 1) && (SelectedDatabasesList.Count >= 1)) ? true : false;
+
 
         public void OpenFile()
         {
@@ -65,8 +86,6 @@ namespace LecturaDeArchivos
 
             if (chooseFile == DialogResult.Cancel)
             {
-                SelectedFiles.Clear();
-
                 CheckAllowExecute();
 
                 return;
@@ -75,10 +94,12 @@ namespace LecturaDeArchivos
             //
             // Agrega los archivos seleccionados para mostrarlos
             chklbxFiles.Items.Clear();
+            SelectedFiles.Clear();
             openFileDialog.FileNames.ToList().ForEach(f => chklbxFiles.Items.Add(f, true));
 
             CheckAllowExecute();
         }
+
 
         public void ChangeControls(bool state)
         {
@@ -88,7 +109,6 @@ namespace LecturaDeArchivos
             {
                 chklbxDataBases,
                 txtLog,
-                //lblSelectedFile,
                 btnAccept
             };
 
@@ -109,6 +129,121 @@ namespace LecturaDeArchivos
             });
         }
 
+
+        public void ChangeSQLAuthenticationControls(bool pEnabled)
+        {
+            //
+            // Controls for SQL Authentication method
+            List<Control> sqlAuthMethodControls = new List<Control>()
+            {
+                lblUser,
+                txtUser,
+                lblPassword,
+                txtPassword
+            };
+
+            sqlAuthMethodControls.ForEach(control =>
+            {
+                if (control is Label)
+                {
+                    ((Label)control).Enabled = pEnabled;
+                }
+                else if (control is TextBox)
+                {
+                    ((TextBox)control).Enabled = pEnabled;
+                }
+            });
+        }
+
+
+
+        public void ExecBackgroundWorker(Action<object> pFnWork, Action<object> pCallback, string pResult = "Listo.")
+        {
+            using (BackgroundWorker worker = new BackgroundWorker())
+            {
+                worker.DoWork += (s, e) =>
+                {
+                    pFnWork.Invoke(e.Argument);
+
+                    e.Result = pResult;
+                };
+
+                worker.RunWorkerCompleted += (s, e) =>
+                {
+                    pCallback.Invoke(e.Result);
+                };
+
+                worker.RunWorkerAsync(pFnWork);
+            }
+        }
+
+
+
+        public void SelectAuthenticationMethod()
+        {
+            //
+            // Reset controls for execute the process
+            ChangeControls(false);
+
+            //
+            // Enable or not, authentication controls method
+            bool state = cbxAuthentication.SelectedItem.Equals("Windows Authentication") ? false : true;
+
+            ChangeSQLAuthenticationControls(state);
+
+            Authentication = cbxAuthentication.SelectedItem.ToString();
+        }
+
+
+
+        public void ConnectToServer()
+        {
+            Action<object> fn = null;
+
+            //
+            // Controls
+            toolStripStatusLabel.Text = $"Connecting to server {RemoteServer.Name}...";
+            btnConnect.Enabled = false;
+
+            //
+            // Select the authentication function method
+            string message = "";
+            if (Authentication.Equals("Windows Authentication"))
+            {
+                fn = (arg) => RemoteConnection.TestConnectionnWindowsAuth(RemoteServer.Name, ref message);
+            }
+            else if (Authentication.Equals("SQL Server Authentication"))
+            {
+                fn = (arg) => RemoteConnection.TestConnectionSql(RemoteServer.Name, RemoteServer.User, RemoteServer.Password, ref message, RemoteServer.DataBase);
+            }
+
+            //
+            // Execute the background worker
+            ExecBackgroundWorker(fn,
+                                (result) =>
+                                {
+                                    toolStripStatusLabel.Text = (string)result;
+                                    btnConnect.Enabled = true;
+
+                                    if (!RemoteConnection.Connected)
+                                    {
+                                        ShowDataBases = false;
+                                        ChangeControls(false);
+                                        MessageBox.Show(message, "Error connecting to server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+
+                                    MessageBox.Show(message, "Connection to server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    //
+                                    // If connected, tries load databases
+                                    ShowDataBases = true;
+                                }
+            );
+        }
+
+
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             //
@@ -123,9 +258,10 @@ namespace LecturaDeArchivos
             //
             // Selecciona el método de autenticación por defecto
             cbxAuthentication.SelectedIndex = 0;
+            SelectAuthenticationMethod();
         }
 
-        private void AbrirToolStripMenuItem_Click(object sender, EventArgs e) => OpenFile();
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) => OpenFile();
 
         private void TxtServer_TextChanged(object sender, EventArgs e)
         {
@@ -133,17 +269,7 @@ namespace LecturaDeArchivos
             ChangeControls(false);
         }
 
-        private void CbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //
-            // Reinicia los controles para ejecutar el procedimiento
-            ChangeControls(false);
-            //
-            // Habilita o no los controles para autenticación por medio de Sql Server
-            tblLayPanelAuthentication.Enabled = cbxAuthentication.SelectedItem.Equals("Windows Authentication") ? false : true;
-
-            Authentication = cbxAuthentication.SelectedItem.ToString();
-        }
+        private void CbxAuthentication_SelectedIndexChanged(object sender, EventArgs e) => SelectAuthenticationMethod();
 
         private void TxtUser_TextChanged(object sender, EventArgs e) => RemoteServer.User = txtUser.Text;
 
@@ -178,53 +304,35 @@ namespace LecturaDeArchivos
             CheckAllowExecute();
         }
 
-        private void BtnConnect_Click(object sender, EventArgs e)
-        {
-            toolStripStatusLabel.Text = "Conectando...";
-
-            string message = "";
-
-            if (Authentication.Equals("Windows Authentication"))
-            {
-                RemoteConnection.TestConnectionnWindowsAuth(RemoteServer.Name, ref message);
-            }
-            else if (Authentication.Equals("SQL Server Authentication"))
-            {
-                RemoteConnection.TestConnectionSql(RemoteServer.Name, RemoteServer.User, RemoteServer.Password, ref message, RemoteServer.DataBase);
-            }
-
-            if (!RemoteConnection.Connected)
-            {
-                ShowDataBases = false;
-                ChangeControls(false);
-                toolStripStatusLabel.Text = message;
-                return;
-            }
-
-            //
-            // Si la conexión se realizó, trata de cargar las bases de datos
-            ShowDataBases = true;
-        }
+        private void BtnConnect_Click(object sender, EventArgs e) => ConnectToServer();
 
         private void BtnOpenFile_Click(object sender, EventArgs e) => OpenFile();
 
         private void BtnCancel_Click(object sender, EventArgs e) => this.Close();
 
+        private void chklbxDataBases_Click(object sender, EventArgs e)
+        {
+            DataBaseFocused = chklbxDataBases.GetItemText(chklbxDataBases.SelectedItem).ToString();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormDatabaseOptions formdatabaseoptions = new FormDatabaseOptions(RemoteServer.Name, DataBaseFocused);
+
+            formdatabaseoptions.ShowDialog(this);
+        }
+
         private void btnAccept_Click(object sender, EventArgs e)
         {
             txtLog.Text = string.Empty;
 
-            //
-            // Recorre las bases de datos seleccionadas
             SelectedDatabasesList.ForEach(database =>
             {
                 string msg = "";
 
-                //
-                // Recorre los archivos seleccionados
                 SelectedFiles.ForEach(file =>
                 {
-                    if (RemoteConnection.CargarScript(file, database, Authentication, ref msg))
+                    if (RemoteConnection.LoadScript(file, database, Authentication, ref msg))
                     {
                         txtLog.AppendText($"{msg}", Color.Green);
                     }
@@ -234,6 +342,28 @@ namespace LecturaDeArchivos
                     }
                 });
             });
+
+            MessageBox.Show("All scripts executed", "Process finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+
+            bool openForm = fc.OfType<Form>()
+                              .AsEnumerable()
+                              .Any(form => form is FormFilterOptions);
+
+            if (openForm)
+            {
+                fc.OfType<Form>()
+                  .First(form => form is FormFilterOptions).Focus();
+
+                return;
+            }
+
+            FormFilterOptions formfilteroptions = new FormFilterOptions();
+            formfilteroptions.Show();
         }
     }
 }
