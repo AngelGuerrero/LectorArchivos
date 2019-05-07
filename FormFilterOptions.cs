@@ -29,7 +29,7 @@ namespace LecturaDeArchivos
             radioBtnEquals.Checked = true;
         }
 
-        private List<string> ApplyOptions()
+        private List<string> ApplyOptions(string pDatabase)
         {
             string msg = "";
             bool error = false;
@@ -40,7 +40,7 @@ namespace LecturaDeArchivos
 
             List<string> retval = new List<string>();
 
-            var storeProcedures = from sp in formMain.RemoteConnection.GetStoreProcedures(ref msg, ref error).AsEnumerable()
+            var storeProcedures = from sp in formMain.RemoteConnection.GetStoreProceduresFromDataBase(pDatabase, ref msg, ref error).AsEnumerable()
                                   select sp.Field<string>("name");
 
             if (Options.Equals("Igual"))
@@ -118,7 +118,7 @@ namespace LecturaDeArchivos
 
                 richTextBoxLog.AppendText($"Servidor: {formMain.RemoteServer.Name}, Base de datos: {selecteddb} {Environment.NewLine}");
 
-                var storeProcedures = ApplyOptions();
+                var storeProcedures = ApplyOptions(selecteddb);
 
                 if (storeProcedures.Count <= 0)
                 {

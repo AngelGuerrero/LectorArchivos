@@ -31,9 +31,9 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.radioBtnEquals = new System.Windows.Forms.RadioButton();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioBtnContains = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.radioBtnContains = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
             this.groupBox.SuspendLayout();
@@ -77,21 +77,25 @@
             this.groupBox.Controls.Add(this.radioBtnEquals);
             this.groupBox.Controls.Add(this.txtFilter);
             this.groupBox.Location = new System.Drawing.Point(5, 3);
+            this.groupBox.MaximumSize = new System.Drawing.Size(476, 132);
+            this.groupBox.MinimumSize = new System.Drawing.Size(476, 132);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(476, 146);
+            this.groupBox.Size = new System.Drawing.Size(476, 132);
             this.groupBox.TabIndex = 2;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Búsqueda";
             // 
-            // panel1
+            // btnSearch
             // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.groupBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 600);
-            this.panel1.TabIndex = 3;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(311, 98);
+            this.btnSearch.MaximumSize = new System.Drawing.Size(250, 30);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(159, 30);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "&Buscar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // radioBtnContains
             // 
@@ -107,17 +111,15 @@
             this.radioBtnContains.Text = "Contiene";
             this.radioBtnContains.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
+            // panel1
             // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSearch.Location = new System.Drawing.Point(311, 102);
-            this.btnSearch.MaximumSize = new System.Drawing.Size(250, 30);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(159, 30);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "&Buscar";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(484, 276);
+            this.panel1.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -127,7 +129,7 @@
             this.groupBox1.Controls.Add(this.richTextBoxLog);
             this.groupBox1.Location = new System.Drawing.Point(5, 139);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(476, 458);
+            this.groupBox1.Size = new System.Drawing.Size(476, 134);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resultado";
@@ -137,7 +139,7 @@
             this.richTextBoxLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxLog.Location = new System.Drawing.Point(3, 16);
             this.richTextBoxLog.Name = "richTextBoxLog";
-            this.richTextBoxLog.Size = new System.Drawing.Size(470, 439);
+            this.richTextBoxLog.Size = new System.Drawing.Size(470, 115);
             this.richTextBoxLog.TabIndex = 0;
             this.richTextBoxLog.Text = "";
             // 
@@ -145,11 +147,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 600);
+            this.ClientSize = new System.Drawing.Size(484, 276);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(500, 1000);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(500, 315);
             this.Name = "FormFilterOptions";
             this.Text = "Parámetros de búsqueda";
             this.Load += new System.EventHandler(this.FormFilterOptions_Load);

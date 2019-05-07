@@ -1,49 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LecturaDeArchivos
 {
-    public partial class FormDatabaseOptions : Form
+    public partial class FormDataBaseOptions : Form
     {
-        public Connection RemoteConnection { get; set; }
-
-        public string ServerName { get; set; }
-
         public string DataBaseName { get; set; }
 
-        public List<string> ListStoreProcedures { get; set; } = new List<string>();
 
-        public FormDatabaseOptions()
+        public FormMain formMain;
+
+
+        public FormDataBaseOptions()
         {
             InitializeComponent();
         }
 
-
-        public FormDatabaseOptions(string pServerName, string pDataBaseName)
+        public FormDataBaseOptions(string pDataBaseName)
         {
             InitializeComponent();
 
             //
-            // Server
-            ServerName = pServerName;
+            // Get the instance of FormMain
+            formMain = Application.OpenForms.OfType<Form>().First() as FormMain;
             //
             // Database
             DataBaseName = pDataBaseName;
             //
             // Title of form
             lblTitle.Text += DataBaseName;
-            //
-            // Init the instance for remote connection
-            RemoteConnection = new Connection();
         }
+
+
+
 
         private void FilterStoreProcedures()
         {
@@ -51,19 +43,19 @@ namespace LecturaDeArchivos
             // Clear the list
             listView_Procs.Items.Clear();
 
-            if (string.IsNullOrEmpty(txtProcName.Text))
+            if (string.IsNullOrEmpty(txtProcedures_Filter.Text))
             {
                 ShowOriginalListStoreProcedures();
                 return;
             }
 
-            string sp = txtProcName.Text;
+            string sp = txtProcedures_Filter.Text;
 
-            bool any = ListStoreProcedures.Any(item => item.ToLower().Contains(sp.ToLower()));
+            bool any = GetStoredProceduresFromCurrentDatabase().Any(item => item.ToLower().Contains(sp.ToLower()));
 
             if (any)
             {
-                ListStoreProcedures.Where(item => item.ToLower().Contains(sp.ToLower()))
+                GetStoredProceduresFromCurrentDatabase().Where(item => item.ToLower().Contains(sp.ToLower()))
                                    .ToList()
                                    .ForEach(item => listView_Procs.Items.Add(item));
             }
@@ -80,7 +72,126 @@ namespace LecturaDeArchivos
             listView_Procs.Items.Clear();
             //
             // Original list
-            ListStoreProcedures.ForEach(item => listView_Procs.Items.Add(item));
+            GetStoredProceduresFromCurrentDatabase().ForEach(item => listView_Procs.Items.Add(item));
+        }
+
+        private List<string> GetStoredProceduresFromCurrentDatabase()
+        {
+            string msg = "";
+            bool error = false;
+
+            //
+            // It gets the stored procedures using the current connection.
+            return (from sp in formMain.RemoteConnection.GetStoreProceduresFromDataBase(DataBaseName, ref msg, ref error).AsEnumerable()
+                    select sp.Field<string>("name")).ToList();
+
+        }
+
+        private List<string> GetTablesFromCurrentDatabase()
+        {
+            treeViewTables.Nodes.Clear();
+
+            string msg = "";
+            bool error = false;
+
+            //
+            // It gets the tables using the current connection.
+            return (from table in formMain.RemoteConnection.GetTablesFromDatabase(DataBaseName, ref msg, ref error).AsEnumerable()
+                    select table.Field<string>("name")).ToList();
+        }
+
+        private void LoadStoredProceduresInListView()
+        {
+            listView_Procs.Clear();
+
+            GetStoredProceduresFromCurrentDatabase().AsEnumerable()
+                                                    .ToList()
+                                                    .ForEach(sp => listView_Procs.Items.Add(sp));
+        }
+
+        private void LoadTreeViewDatabase()
+        {
+            //
+            // Tables node
+            TreeNode treeNodeTables = new TreeNode("Tables");
+            treeNodeTables.Name = "treeNodeTables";
+            //
+            // Load the information into the table node
+            GetTablesFromCurrentDatabase().ForEach(table => treeNodeTables.Nodes.Add(table));
+
+            //
+            // Stored procedures node
+            TreeNode treeNodeStoredProcedures = new TreeNode("Stored Procedures");
+            treeNodeStoredProcedures.Name = "treeNodeStoredProcedures";
+            //
+            // Load the stored procedures into the tree node
+            GetStoredProceduresFromCurrentDatabase().ForEach(sp => treeNodeStoredProcedures.Nodes.Add(sp));
+
+            LoadTreeViewDatabase(treeNodeTables, treeNodeStoredProcedures);
+        }
+
+        private void LoadTreeViewDatabase(TreeNode pTreeNodeTables, TreeNode pTreeNodeStoredProcedures)
+        {
+            //
+            // Add a root node
+            TreeNode root = new TreeNode(DataBaseName);
+            root.Name = "Root";
+            root.Text = DataBaseName;
+
+            //
+            // Add nodes into the root node
+            root.Nodes.Add(pTreeNodeTables);
+            root.Nodes.Add(pTreeNodeStoredProcedures);
+
+            //
+            // Add root node into the tree view
+            treeViewTables.Nodes.Add(root);
+            treeViewTables.ExpandAll();
+        }
+
+        private void tabPage_DatabaseTables_Enter(object sender, EventArgs e) => LoadTreeViewDatabase();
+
+        private void tabPage_StoredProcedures_Enter(object sender, EventArgs e) => LoadStoredProceduresInListView();
+
+        private void FilterTreeView(string pFilter)
+        {
+            //
+            // Tables node
+            TreeNode treeNodeTables = new TreeNode("Tables");
+            treeNodeTables.Name = "treeNodeTables";
+
+            //
+            // Stored procedures node
+            TreeNode treeNodeStoredProcedures = new TreeNode("Stored Procedures");
+            treeNodeStoredProcedures.Name = "treeNodeStoredProcedures";
+
+
+            //
+            // Filter the tables
+            GetTablesFromCurrentDatabase().Where(table => table.ToLower().Contains(pFilter.ToLower()))
+                                          .ToList()
+                                          .ForEach(table => treeNodeTables.Nodes.Add(table));
+
+            //
+            // Filter the stored procedures
+            GetStoredProceduresFromCurrentDatabase().Where(sp => sp.ToLower().Contains(pFilter.ToLower()))
+                                                    .ToList()
+                                                    .ForEach(sp => treeNodeStoredProcedures.Nodes.Add(sp));
+
+            LoadTreeViewDatabase(treeNodeTables, treeNodeStoredProcedures);
+        }
+
+        private void txtTables_Filter_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter))
+            {
+                FilterTreeView(txtTables_Filter.Text);
+            }
+
+            if ((e.Shift && e.KeyCode == Keys.Enter))
+            {
+                LoadTreeViewDatabase();
+            }
         }
 
         private void txtProcName_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -96,31 +207,25 @@ namespace LecturaDeArchivos
             }
         }
 
-        private void tabPage_Procs_Enter(object sender, EventArgs e)
+        private void TxtProcName_Enter(object sender, EventArgs e)
         {
-            string msg = "";
-            bool error = false;
-            if (!RemoteConnection.TestConnectionnWindowsAuth(ServerName, ref msg, DataBaseName))
+            if (txtProcedures_Filter.Text.Equals("Buscar en los procedimientos almacenados"))
             {
-                MessageBox.Show(msg, "Conexión a la base de datos fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtProcedures_Filter.Text = string.Empty;
+                txtProcedures_Filter.ForeColor = System.Drawing.Color.Black;
                 return;
             }
-
-            MessageBox.Show(msg, "Conexión a la base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            var storeProcedures = (from sp in RemoteConnection.GetStoreProcedures(ref msg, ref error).AsEnumerable()
-                                   select sp.Field<string>("name")).ToList();
-
-            storeProcedures.AsEnumerable()
-                           .ToList()
-                           .ForEach(sp => listView_Procs.Items.Add(sp));
-
-            ListStoreProcedures.AddRange(storeProcedures);
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void TxtProcName_Leave(object sender, EventArgs e)
         {
-            this.Close();
+            if (!string.IsNullOrEmpty(txtProcedures_Filter.Text)) return;
+
+            txtProcedures_Filter.ForeColor = System.Drawing.Color.Gray;
+            txtProcedures_Filter.Text = "Buscar en los procedimientos almacenados";
         }
+
+        private void btnCancel_Click(object sender, EventArgs e) => this.Close();
+
     }
 }

@@ -79,7 +79,7 @@ namespace LecturaDeArchivos
         private void CheckAllowExecute() => btnAccept.Enabled = ((SelectedFiles.Count >= 1) && (SelectedDatabasesList.Count >= 1)) ? true : false;
 
 
-        public void OpenFile()
+        private void OpenFile()
         {
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             DialogResult chooseFile = openFileDialog.ShowDialog();
@@ -101,7 +101,7 @@ namespace LecturaDeArchivos
         }
 
 
-        public void ChangeControls(bool state)
+        private void ChangeControls(bool state)
         {
             ShowDataBases = state;
 
@@ -196,7 +196,7 @@ namespace LecturaDeArchivos
 
 
 
-        public void ConnectToServer()
+        private void ConnectToServer()
         {
             Action<object> fn = null;
 
@@ -310,14 +310,13 @@ namespace LecturaDeArchivos
 
         private void BtnCancel_Click(object sender, EventArgs e) => this.Close();
 
-        private void chklbxDataBases_Click(object sender, EventArgs e)
-        {
-            DataBaseFocused = chklbxDataBases.GetItemText(chklbxDataBases.SelectedItem).ToString();
-        }
+        private void chklbxDataBases_Click(object sender, EventArgs e) => DataBaseFocused = chklbxDataBases.GetItemText(chklbxDataBases.SelectedItem).ToString();
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FormDatabaseOptions formdatabaseoptions = new FormDatabaseOptions(RemoteServer.Name, DataBaseFocused);
+            if (String.IsNullOrEmpty(DataBaseFocused)) return;
+
+            FormDataBaseOptions formdatabaseoptions = new FormDataBaseOptions(DataBaseFocused);
 
             formdatabaseoptions.ShowDialog(this);
         }

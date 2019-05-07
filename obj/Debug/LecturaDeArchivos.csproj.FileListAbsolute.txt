@@ -9,3 +9,15 @@ C:\Users\lsantiagog\Downloads\LectorArchivos-master\obj\Debug\LecturaDeArchivos.
 C:\Users\lsantiagog\Downloads\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormDatabaseOptions.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormFilterOptions.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormProgress.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\bin\Debug\LecturaDeArchivos.exe.config
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\bin\Debug\LecturaDeArchivos.exe
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\bin\Debug\LecturaDeArchivos.pdb
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.FormDatabaseOptions.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.FormFilterOptions.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.FormMain.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.FormProgress.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.Properties.Resources.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.csproj.GenerateResource.cache
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.exe
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.pdb

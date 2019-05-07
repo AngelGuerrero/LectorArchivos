@@ -1,6 +1,6 @@
 ﻿namespace LecturaDeArchivos
 {
-    partial class FormDatabaseOptions
+    partial class FormDataBaseOptions
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,20 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tabOptionsProperties = new System.Windows.Forms.TabControl();
-            this.tabPage_tables = new System.Windows.Forms.TabPage();
-            this.tabPage_Procs = new System.Windows.Forms.TabPage();
+            this.tabPage_DatabaseTables = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.treeViewTables = new System.Windows.Forms.TreeView();
+            this.txtTables_Filter = new System.Windows.Forms.TextBox();
+            this.tabPage_StoredProcedures = new System.Windows.Forms.TabPage();
             this.listView_Procs = new System.Windows.Forms.ListView();
-            this.txtProcName = new System.Windows.Forms.TextBox();
+            this.txtProcedures_Filter = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabOptionsProperties.SuspendLayout();
-            this.tabPage_Procs.SuspendLayout();
+            this.tabPage_DatabaseTables.SuspendLayout();
+            this.tabPage_StoredProcedures.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,36 +86,65 @@
             this.tabOptionsProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabOptionsProperties.Controls.Add(this.tabPage_tables);
-            this.tabOptionsProperties.Controls.Add(this.tabPage_Procs);
+            this.tabOptionsProperties.Controls.Add(this.tabPage_DatabaseTables);
+            this.tabOptionsProperties.Controls.Add(this.tabPage_StoredProcedures);
             this.tabOptionsProperties.Location = new System.Drawing.Point(0, 0);
             this.tabOptionsProperties.Name = "tabOptionsProperties";
             this.tabOptionsProperties.SelectedIndex = 0;
             this.tabOptionsProperties.Size = new System.Drawing.Size(749, 398);
             this.tabOptionsProperties.TabIndex = 0;
             // 
-            // tabPage_tables
+            // tabPage_DatabaseTables
             // 
-            this.tabPage_tables.Location = new System.Drawing.Point(4, 22);
-            this.tabPage_tables.Name = "tabPage_tables";
-            this.tabPage_tables.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_tables.Size = new System.Drawing.Size(741, 372);
-            this.tabPage_tables.TabIndex = 0;
-            this.tabPage_tables.Text = "Tablas";
-            this.tabPage_tables.UseVisualStyleBackColor = true;
+            this.tabPage_DatabaseTables.Controls.Add(this.panel3);
+            this.tabPage_DatabaseTables.Controls.Add(this.treeViewTables);
+            this.tabPage_DatabaseTables.Controls.Add(this.txtTables_Filter);
+            this.tabPage_DatabaseTables.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_DatabaseTables.Name = "tabPage_DatabaseTables";
+            this.tabPage_DatabaseTables.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_DatabaseTables.Size = new System.Drawing.Size(741, 372);
+            this.tabPage_DatabaseTables.TabIndex = 0;
+            this.tabPage_DatabaseTables.Text = "Tablas";
+            this.tabPage_DatabaseTables.UseVisualStyleBackColor = true;
+            this.tabPage_DatabaseTables.Enter += new System.EventHandler(this.tabPage_DatabaseTables_Enter);
             // 
-            // tabPage_Procs
+            // panel3
             // 
-            this.tabPage_Procs.Controls.Add(this.listView_Procs);
-            this.tabPage_Procs.Controls.Add(this.txtProcName);
-            this.tabPage_Procs.Location = new System.Drawing.Point(4, 22);
-            this.tabPage_Procs.Name = "tabPage_Procs";
-            this.tabPage_Procs.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Procs.Size = new System.Drawing.Size(741, 372);
-            this.tabPage_Procs.TabIndex = 1;
-            this.tabPage_Procs.Text = "Procedimientos almacenados";
-            this.tabPage_Procs.UseVisualStyleBackColor = true;
-            this.tabPage_Procs.Enter += new System.EventHandler(this.tabPage_Procs_Enter);
+            this.panel3.AutoSize = true;
+            this.panel3.Location = new System.Drawing.Point(180, 32);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(558, 334);
+            this.panel3.TabIndex = 2;
+            // 
+            // treeViewTables
+            // 
+            this.treeViewTables.Location = new System.Drawing.Point(8, 32);
+            this.treeViewTables.Name = "treeViewTables";
+            this.treeViewTables.Size = new System.Drawing.Size(166, 334);
+            this.treeViewTables.TabIndex = 1;
+            // 
+            // txtTables_Filter
+            // 
+            this.txtTables_Filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTables_Filter.Location = new System.Drawing.Point(8, 6);
+            this.txtTables_Filter.Name = "txtTables_Filter";
+            this.txtTables_Filter.Size = new System.Drawing.Size(730, 20);
+            this.txtTables_Filter.TabIndex = 0;
+            this.txtTables_Filter.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtTables_Filter_PreviewKeyDown);
+            // 
+            // tabPage_StoredProcedures
+            // 
+            this.tabPage_StoredProcedures.Controls.Add(this.listView_Procs);
+            this.tabPage_StoredProcedures.Controls.Add(this.txtProcedures_Filter);
+            this.tabPage_StoredProcedures.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_StoredProcedures.Name = "tabPage_StoredProcedures";
+            this.tabPage_StoredProcedures.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_StoredProcedures.Size = new System.Drawing.Size(741, 372);
+            this.tabPage_StoredProcedures.TabIndex = 1;
+            this.tabPage_StoredProcedures.Text = "Procedimientos almacenados";
+            this.tabPage_StoredProcedures.UseVisualStyleBackColor = true;
+            this.tabPage_StoredProcedures.Enter += new System.EventHandler(this.tabPage_StoredProcedures_Enter);
             // 
             // listView_Procs
             // 
@@ -125,15 +158,19 @@
             this.listView_Procs.UseCompatibleStateImageBehavior = false;
             this.listView_Procs.View = System.Windows.Forms.View.List;
             // 
-            // txtProcName
+            // txtProcedures_Filter
             // 
-            this.txtProcName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtProcedures_Filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProcName.Location = new System.Drawing.Point(8, 6);
-            this.txtProcName.Name = "txtProcName";
-            this.txtProcName.Size = new System.Drawing.Size(730, 20);
-            this.txtProcName.TabIndex = 0;
-            this.txtProcName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtProcName_PreviewKeyDown);
+            this.txtProcedures_Filter.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtProcedures_Filter.Location = new System.Drawing.Point(8, 6);
+            this.txtProcedures_Filter.Name = "txtProcedures_Filter";
+            this.txtProcedures_Filter.Size = new System.Drawing.Size(730, 20);
+            this.txtProcedures_Filter.TabIndex = 0;
+            this.txtProcedures_Filter.Text = "Buscar en los procedimientos almacenados";
+            this.txtProcedures_Filter.Enter += new System.EventHandler(this.TxtProcName_Enter);
+            this.txtProcedures_Filter.Leave += new System.EventHandler(this.TxtProcName_Leave);
+            this.txtProcedures_Filter.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtProcName_PreviewKeyDown);
             // 
             // panel2
             // 
@@ -157,7 +194,7 @@
             this.lblTitle.Text = "Propiedades de la base de datos: ";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // FormDatabaseOptions
+            // FormDataBaseOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,15 +204,17 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormDatabaseOptions";
+            this.Name = "FormDataBaseOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Propiedades";
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tabOptionsProperties.ResumeLayout(false);
-            this.tabPage_Procs.ResumeLayout(false);
-            this.tabPage_Procs.PerformLayout();
+            this.tabPage_DatabaseTables.ResumeLayout(false);
+            this.tabPage_DatabaseTables.PerformLayout();
+            this.tabPage_StoredProcedures.ResumeLayout(false);
+            this.tabPage_StoredProcedures.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -186,13 +225,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabOptionsProperties;
-        private System.Windows.Forms.TabPage tabPage_tables;
-        private System.Windows.Forms.TabPage tabPage_Procs;
+        private System.Windows.Forms.TabPage tabPage_DatabaseTables;
+        private System.Windows.Forms.TabPage tabPage_StoredProcedures;
         private System.Windows.Forms.ListView listView_Procs;
-        private System.Windows.Forms.TextBox txtProcName;
+        private System.Windows.Forms.TextBox txtProcedures_Filter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TreeView treeViewTables;
+        private System.Windows.Forms.TextBox txtTables_Filter;
     }
 }

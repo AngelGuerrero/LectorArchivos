@@ -233,10 +233,20 @@ namespace LecturaDeArchivos
 
 
 
-        public DataTable GetStoreProcedures(ref string pMessage, ref bool pError)
+        public DataTable GetTablesFromDatabase(string pDatabase, ref string pMessage, ref bool pError)
         {
-            string query = $@"SELECT specific_name AS name
-                               FROM {DataBase}.INFORMATION_SCHEMA.ROUTINES
+            string query = $@"SELECT TABLE_NAME AS [name]
+                                FROM [{pDatabase}].INFORMATION_SCHEMA.TABLES 
+                               WHERE TABLE_TYPE = 'BASE TABLE'";
+
+            return ExecuteQuery(query, ref pMessage, ref pError);
+        }
+
+
+        public DataTable GetStoreProceduresFromDataBase(string pDatabase, ref string pMessage, ref bool pError)
+        {
+            string query = $@"SELECT specific_name AS [name]
+                               FROM {pDatabase}.INFORMATION_SCHEMA.ROUTINES
                               WHERE 1 = 1
                                 AND routine_type = 'PROCEDURE'
                                 AND LEFT(routine_name, 3) NOT IN ('sp_', 'xp_', 'ms_')";
