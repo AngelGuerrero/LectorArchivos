@@ -3,6 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace LecturaDeArchivos
 {
@@ -43,7 +45,7 @@ namespace LecturaDeArchivos
                     _connectionString = "Data Source=" + Server + ";Initial Catalog=" + DataBase + ";User ID=" + User + ";Password=" + Password + ";";
                 }
             }
-        } 
+        }
 
         #endregion
 
@@ -96,26 +98,26 @@ namespace LecturaDeArchivos
 
             FileInfo file = new FileInfo(pPath);
 
-            string script;
+            string script = "";
+
+            if (!file.Exists)
+            {
+                pMessage = $"File not found: {file}";
+                return false;
+            }
+
             using (var reader = file.OpenText())
             {
                 script = reader.ReadToEnd();
-                script = script.Replace("GO", "");
             }
 
 
             try
             {
                 pMessage = $"--------------- Server: {Server} - Database: {DataBase} --------------- {Environment.NewLine}{Environment.NewLine}";
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
-                using (SqlCommand command = new SqlCommand(script, conn))
-                {
-                    command.Connection.Open();
-                    command.ExecuteNonQuery();
-                    command.Connection.Close();
 
-                    pMessage += $"--- File: '{file}' {Environment.NewLine} Ok. {Environment.NewLine}";
-                }
+                ExecuteNonQueryBatch(ConnectionString, script);
+                pMessage += $"--- File: '{file}' {Environment.NewLine} Ok. {Environment.NewLine}";
             }
             catch (Exception ex)
             {
@@ -133,11 +135,40 @@ namespace LecturaDeArchivos
 
 
 
+        public void ExecuteNonQueryBatch(string connectionString, string sqlStatements)
+        {
+            if (sqlStatements == null) throw new ArgumentNullException("sqlStatements");
+            if (sqlStatements == null) throw new ArgumentNullException("connectionString");
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                Regex r = new Regex(@"^(\s|\t)*go(\s\t)?.*", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+
+                foreach (string s in r.Split(sqlStatements))
+                {
+                    // Skip empty statements, in case of a GO and trailing blanks or something
+                    string thisStatement = s.Trim();
+                    if (String.IsNullOrEmpty(thisStatement)) continue;
+
+                    using (SqlCommand cmd = new SqlCommand(thisStatement, connection))
+                    {
+                        cmd.Connection.Open();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.ExecuteNonQuery();
+                        cmd.Connection.Close();
+                    }
+                }
+            }
+        }
+
+
+
         /// <summary>
-        /// Obtiene las bases de datos del equipo conectado.
+        /// This method gets the databases from the connected server.
         /// 
-        /// Ejecuta un query con la cadena de conexión dada
-        /// para obtener las bases de datos de tipo 'U'.
+        /// Executes a query using the curreny connection string
+        /// it gets the 'U' type databases.
         /// </summary>
         /// <param name="pMessage"></param>
         /// <param name="pError"></param>
@@ -147,15 +178,10 @@ namespace LecturaDeArchivos
         {
             DataTable datatable = new DataTable();
 
-            string query = @"SELECT p.[name] AS [user]
-                                  , d.[name] AS [database]
-	                              , d.create_date
-                              FROM master.sys.server_principals p
-                                 , master.sys.databases d
-                             WHERE 1 = 1
-                               AND p.[sid] = d.owner_sid
-                               AND p.[type] = 'U'
-                                 ;";
+            string query = @"SELECT [name] AS [database]
+                               FROM sys.databases d
+                              WHERE d.database_id > 4;
+                            ";
 
             try
             {
@@ -188,7 +214,36 @@ namespace LecturaDeArchivos
 
 
 
-        private SqlConnection ConectarSQL()
+        public DataTable GetTablesFromDatabase(string pDatabase, ref string pMessage, ref bool pError)
+        {
+            string query = $@"SELECT TABLE_NAME AS [name]
+                                FROM [{pDatabase}].INFORMATION_SCHEMA.TABLES 
+                               WHERE 1 = 1
+                                 AND TABLE_TYPE = 'BASE TABLE'
+                                 AND NOT (TABLE_NAME IN ('sysdiagrams'))
+                                   ;
+                              ";
+
+            return ExecuteQuery(query, ref pMessage, ref pError);
+        }
+
+
+
+        public DataTable GetStoreProceduresFromDataBase(string pDatabase, ref string pMessage, ref bool pError)
+        {
+            string query = $@"SELECT specific_name AS [name]
+                               FROM {pDatabase}.INFORMATION_SCHEMA.ROUTINES
+                              WHERE 1 = 1
+                                AND routine_type = 'PROCEDURE'
+                                AND LEFT(routine_name, 3) NOT IN ('sp_', 'xp_', 'ms_')";
+
+
+            return ExecuteQuery(query, ref pMessage, ref pError);
+        }
+
+
+
+        private SqlConnection ConnectWithSQLServerAuth()
         {
             ConnectionString = "SQL";
 
@@ -197,11 +252,50 @@ namespace LecturaDeArchivos
 
 
 
-        private SqlConnection ConectarWindowsAuth()
+        private SqlConnection ConnectWithWindowsAuth()
         {
             ConnectionString = "WIN";
 
             return new SqlConnection(ConnectionString);
+        }
+
+
+
+        private DataTable ExecuteQuery(string pQuery, ref string pMessage, ref bool pError)
+        {
+            DataTable datatable = new DataTable();
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                using (SqlCommand command = new SqlCommand(pQuery, con))
+                {
+                    command.CommandTimeout = 0;
+                    SqlDataReader reader;
+
+                    con.Open();
+                    reader = command.ExecuteReader();
+                    datatable.Load(reader);
+
+                    reader.Close();
+                    con.Close();
+
+                    pMessage = "Query executed successfully!";
+                    pError = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                pMessage = ex.Message;
+                pError = true;
+
+                if (ex.InnerException != null)
+                {
+                    pMessage += ex.InnerException.Message;
+                }
+            }
+
+            return datatable;
         }
 
 
@@ -225,7 +319,7 @@ namespace LecturaDeArchivos
                 {
                     con.Open();
                     con.Close();
-                    pMessage = "Connected to .";
+                    pMessage = $"Connected to server {Server} successfully.";
                     retval = true;
                 }
             }
