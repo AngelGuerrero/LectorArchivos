@@ -1,0 +1,1034 @@
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:34 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetAplicacion.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetAplicacionGrid.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetCodigoPad.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetControlGrid.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetLocalidades.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetMenuGrid.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetPerfId.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetPerfilesApp.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetPerfilesGrid.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:35 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetReplicaSeguridadSDS.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatGetUsuarioGrid.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatInsAplicacion.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatInsControl.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatInsPerfiles.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatInsUsuario.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatUpdAplicacion.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:36 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatUpdControl.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:37 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatUpdMenuPerfiles.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:37 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatUpdPerfiles.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:37 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.CatUpdUsuario.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:37 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.RelGetPerfilesMen.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:37 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\dbo.RelUpdMenu.StoredProcedure.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:11:37 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'D:\Desarrollos\RESPALDO SDS Accesos Procedimientos\VERSIONES\v1.0.0\Procedimientos\segSeguridadConsultaUsuarios.sql' 
+ Ok. 
+
+
+
+========== Consulta información localidad: CD40 ==========
+
+24/05/2019 08:12:30 p.m.
+Acción: Consulta de usuarios
+Servidor: ECACDSD-0001A
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CE30 ==========
+
+24/05/2019 08:12:30 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsCE30
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CE31 ==========
+
+24/05/2019 08:12:30 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsCE31
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CE33 ==========
+
+24/05/2019 08:12:30 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsCE33
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CE34 ==========
+
+24/05/2019 08:12:30 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsCE34
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CE38 ==========
+
+24/05/2019 08:12:30 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsCE38
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CF35 ==========
+
+24/05/2019 08:12:31 p.m.
+Acción: Consulta de usuarios
+Servidor: GD2WPSQLVM01
+Base de datos: SDS_VA
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: CF36 ==========
+
+24/05/2019 08:12:32 p.m.
+Acción: Consulta de usuarios
+Servidor: GD3WPSQLVM01
+Base de datos: SDS_VA
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC18 ==========
+
+24/05/2019 08:12:32 p.m.
+Acción: Consulta de usuarios
+Servidor: MICHCDD03
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC20 ==========
+
+24/05/2019 08:12:33 p.m.
+Acción: Consulta de usuarios
+Servidor: MxNlMyC03WPDb01
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC21 ==========
+
+24/05/2019 08:12:34 p.m.
+Acción: Consulta de usuarios
+Servidor: CUECDD4912B
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC22 ==========
+
+24/05/2019 08:12:34 p.m.
+Acción: Consulta de usuarios
+Servidor: VERCDD4108
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC23 ==========
+
+24/05/2019 08:12:34 p.m.
+Acción: Consulta de usuarios
+Servidor: MXJCGDC08WPDB01
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC24 ==========
+
+24/05/2019 08:12:35 p.m.
+Acción: Consulta de usuarios
+Servidor: MxMeTlC09WpDb01
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC26 ==========
+
+24/05/2019 08:12:35 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsDC26
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC27 ==========
+
+24/05/2019 08:12:35 p.m.
+Acción: Consulta de usuarios
+Servidor: TEPCDSD-9260
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC29 ==========
+
+24/05/2019 08:12:36 p.m.
+Acción: Consulta de usuarios
+Servidor: IZTCDSD-0007A
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC30 ==========
+
+24/05/2019 08:12:36 p.m.
+Acción: Consulta de usuarios
+Servidor: MxSpSpC20WPDb01
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC32 ==========
+
+24/05/2019 08:12:36 p.m.
+Acción: Consulta de usuarios
+Servidor: TOLCDD0001
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC37 ==========
+
+24/05/2019 08:12:37 p.m.
+Acción: Consulta de usuarios
+Servidor: PBLCDD003
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC38 ==========
+
+24/05/2019 08:12:37 p.m.
+Acción: Consulta de usuarios
+Servidor: AGSCDD03
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC62 ==========
+
+24/05/2019 08:12:37 p.m.
+Acción: Consulta de usuarios
+Servidor: MxChChC04WPDb01
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC63 ==========
+
+24/05/2019 08:12:38 p.m.
+Acción: Consulta de usuarios
+Servidor: DDC-2604
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC64 ==========
+
+24/05/2019 08:12:38 p.m.
+Acción: Consulta de usuarios
+Servidor: TMX-2565
+Base de datos: SDSDC64
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: DC67 ==========
+
+24/05/2019 08:12:38 p.m.
+Acción: Consulta de usuarios
+Servidor: MxQoQoD01WPDb02
+Base de datos: sdsDC67
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: FR20 ==========
+
+24/05/2019 08:12:39 p.m.
+Acción: Consulta de usuarios
+Servidor: MEMCUEPRO
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: FR21 ==========
+
+24/05/2019 08:12:40 p.m.
+Acción: Consulta de usuarios
+Servidor: MEMTEPPRO
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: FR22 ==========
+
+24/05/2019 08:12:41 p.m.
+Acción: Consulta de usuarios
+Servidor: MEMSLPTIF
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: FR22 ==========
+
+24/05/2019 08:12:41 p.m.
+Acción: Consulta de usuarios
+Servidor: MxSpSpC20WPDb01
+Base de datos: SDS
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: FR31 ==========
+
+24/05/2019 08:12:41 p.m.
+Acción: Consulta de usuarios
+Servidor: GD2WPSQLVM01
+Base de datos: SDS_PF
+Mensaje: Query executed successfully!
+
+
+========== Consulta información localidad: FR33 ==========
+
+24/05/2019 08:12:42 p.m.
+Acción: Consulta de usuarios
+Servidor: GD3WPSQLVM01
+Base de datos: SDS_PF
+Mensaje: Query executed successfully!
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:08 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CD40-ECACDSD-0001A-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:08 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CE30-MxQoQoD01WPDb02-sdsCE30-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:08 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CE31-MxQoQoD01WPDb02-sdsCE31-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CE33-MxQoQoD01WPDb02-sdsCE33-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CE34-MxQoQoD01WPDb02-sdsCE34-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CE38-MxQoQoD01WPDb02-sdsCE38-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CF35-GD2WPSQLVM01-SDS_VA-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\CF36-GD3WPSQLVM01-SDS_VA-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC18-MICHCDD03-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC20-MxNlMyC03WPDb01-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC21-CUECDD4912B-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC22-VERCDD4108-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC23-MXJCGDC08WPDB01-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC24-MxMeTlC09WpDb01-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC26-MxQoQoD01WPDb02-sdsDC26-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC27-TEPCDSD-9260-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC29-IZTCDSD-0007A-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC30-MxSpSpC20WPDb01-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC32-TOLCDD0001-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC37-PBLCDD003-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC38-AGSCDD03-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC62-MxChChC04WPDb01-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC63-DDC-2604-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC64-TMX-2565-SDSDC64-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\DC67-MxQoQoD01WPDb02-sdsDC67-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\FR20-MEMCUEPRO-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\FR21-MEMTEPPRO-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\FR22-MEMSLPTIF-SDS-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\FR22-MxSpSpC20WPDb01-SDS-INSERTS.sql' 
+ Error: 'Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (BCAMPILLOR, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (CAMAYAS, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (CLOZANOL, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (CMENDEZ, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (CRIVERAH, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (DGONZALEZJ, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (DNOYOLAH, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (DRAMOSA , DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (DRUIZD, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (EFLORES, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (EGONZALEZS, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (EHERNANDEZH, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (EMUNOZ, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (JCERDAC, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (JDIAZG, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (JHERNANDEZG1, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (JMANZANOL, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (JTELLO, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (LESPINOZA, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (LMARTINEZG, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (MMARTINEZC, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (MVAZQUEZBO, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (PESPINOSAO, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (PESPINOZAO, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (RGUERRERO, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (RMALABEHARG, DC30).
+Violation of PRIMARY KEY constraint 'PK_catUSUARIO'. Cannot insert duplicate key in object 'dbo.catUSUARIO'. The duplicate key value is (YHERNANDEZM, DC30).
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.
+The statement has been terminated.' 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\FR31-GD2WPSQLVM01-SDS_PF-INSERTS.sql' 
+ Ok. 
+
+
+
+========== EJECUCIÓN DE SCRIPT ==========
+
+24/05/2019 08:13:09 p.m.
+Acción: Ejecución de scrpit (archivo)
+Servidor: MEXAPPTEST
+Base de datos: 
+Mensaje: --------------- Server: MEXAPPTEST - Database: sdsSEGURIDAD --------------- 
+
+--- File: 'C:\Users\lsantiagog\Documents\INSERTS\20190524_081055_Localidades\FR33-GD3WPSQLVM01-SDS_PF-INSERTS.sql' 
+ Ok. 
+
+
+
