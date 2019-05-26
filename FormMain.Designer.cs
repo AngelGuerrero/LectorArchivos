@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -55,19 +57,26 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDelProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chklbxDataBases = new System.Windows.Forms.CheckedListBox();
+            this.contextMenuStripDataBases = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.PropiedadestoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chklbxFiles = new System.Windows.Forms.CheckedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtLog = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.seleccionarTodotoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tblLayPanelAuthentication.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.contextMenuStripDataBases.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -145,7 +154,7 @@
             this.lblAuthentication.Location = new System.Drawing.Point(3, 0);
             this.lblAuthentication.MaximumSize = new System.Drawing.Size(0, 25);
             this.lblAuthentication.Name = "lblAuthentication";
-            this.lblAuthentication.Size = new System.Drawing.Size(89, 25);
+            this.lblAuthentication.Size = new System.Drawing.Size(84, 25);
             this.lblAuthentication.TabIndex = 1;
             this.lblAuthentication.Text = "Autenticación:";
             this.lblAuthentication.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,7 +255,7 @@
             this.tblLayPanelAuthentication.ColumnCount = 3;
             this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.6474F));
             this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.3526F));
-            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 355F));
+            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 363F));
             this.tblLayPanelAuthentication.Controls.Add(this.lblAuthentication, 0, 0);
             this.tblLayPanelAuthentication.Controls.Add(this.lblPassword, 1, 2);
             this.tblLayPanelAuthentication.Controls.Add(this.lblUser, 1, 1);
@@ -267,9 +276,9 @@
             // lblPassword
             // 
             this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPassword.Location = new System.Drawing.Point(98, 58);
+            this.lblPassword.Location = new System.Drawing.Point(93, 58);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(66, 35);
+            this.lblPassword.Size = new System.Drawing.Size(63, 35);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Contraseña:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -278,9 +287,9 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUser.Location = new System.Drawing.Point(98, 29);
+            this.lblUser.Location = new System.Drawing.Point(93, 29);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(66, 29);
+            this.lblUser.Size = new System.Drawing.Size(63, 29);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Usuario:";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -288,9 +297,9 @@
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(170, 32);
+            this.txtUser.Location = new System.Drawing.Point(162, 32);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(350, 20);
+            this.txtUser.Size = new System.Drawing.Size(358, 20);
             this.txtUser.TabIndex = 4;
             this.txtUser.TextChanged += new System.EventHandler(this.TxtUser_TextChanged);
             // 
@@ -298,9 +307,9 @@
             // 
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(170, 61);
+            this.txtPassword.Location = new System.Drawing.Point(162, 61);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(350, 20);
+            this.txtPassword.Size = new System.Drawing.Size(358, 20);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
@@ -314,9 +323,9 @@
             this.cbxAuthentication.Items.AddRange(new object[] {
             "Windows Authentication",
             "SQL Server Authentication"});
-            this.cbxAuthentication.Location = new System.Drawing.Point(98, 3);
+            this.cbxAuthentication.Location = new System.Drawing.Point(93, 3);
             this.cbxAuthentication.Name = "cbxAuthentication";
-            this.cbxAuthentication.Size = new System.Drawing.Size(422, 21);
+            this.cbxAuthentication.Size = new System.Drawing.Size(427, 21);
             this.cbxAuthentication.TabIndex = 6;
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.CbxAuthentication_SelectedIndexChanged);
             // 
@@ -360,6 +369,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
+            this.editarToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -367,9 +377,24 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buscarToolStripMenuItem});
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.editarToolStripMenuItem.Text = "&Editar";
+            // 
+            // buscarToolStripMenuItem
+            // 
+            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.buscarToolStripMenuItem.Text = "&Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
+            // 
             // chklbxDataBases
             // 
-            this.chklbxDataBases.CheckOnClick = true;
+            this.chklbxDataBases.ContextMenuStrip = this.contextMenuStripDataBases;
             this.chklbxDataBases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chklbxDataBases.Enabled = false;
             this.chklbxDataBases.FormattingEnabled = true;
@@ -379,6 +404,23 @@
             this.chklbxDataBases.Sorted = true;
             this.chklbxDataBases.TabIndex = 11;
             this.chklbxDataBases.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chklbxDataBases_ItemCheck);
+            this.chklbxDataBases.Click += new System.EventHandler(this.chklbxDataBases_Click);
+            // 
+            // contextMenuStripDataBases
+            // 
+            this.contextMenuStripDataBases.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seleccionarTodotoolStripMenuItem,
+            this.toolStripSeparator1,
+            this.PropiedadestoolStripMenuItem});
+            this.contextMenuStripDataBases.Name = "contextMenuStripDataBases";
+            this.contextMenuStripDataBases.Size = new System.Drawing.Size(163, 76);
+            // 
+            // PropiedadestoolStripMenuItem
+            // 
+            this.PropiedadestoolStripMenuItem.Name = "PropiedadestoolStripMenuItem";
+            this.PropiedadestoolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.PropiedadestoolStripMenuItem.Text = "Propiedades";
+            this.PropiedadestoolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // chklbxFiles
             // 
@@ -453,6 +495,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Conexión con el servidor";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            // 
+            // seleccionarTodotoolStripMenuItem
+            // 
+            this.seleccionarTodotoolStripMenuItem.Name = "seleccionarTodotoolStripMenuItem";
+            this.seleccionarTodotoolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.seleccionarTodotoolStripMenuItem.Text = "Seleccionar todo";
+            this.seleccionarTodotoolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodotoolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,12 +524,12 @@
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -488,6 +542,7 @@
             this.tblLayPanelAuthentication.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.contextMenuStripDataBases.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -532,6 +587,12 @@
         private System.Windows.Forms.RichTextBox txtLog;
         private System.Windows.Forms.ComboBox cbxAuthentication;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripDataBases;
+        private System.Windows.Forms.ToolStripMenuItem PropiedadestoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarTodotoolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
