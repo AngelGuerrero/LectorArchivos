@@ -26,10 +26,12 @@ C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-opt
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.pdb
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\bin\Debug\LecturaDeArchivos.exe
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\bin\Debug\LecturaDeArchivos.pdb
-C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.csprojResolveAssemblyReference.cache
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.FormDataBaseOptions.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.FormFilterOptions.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.FormMain.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.FormProgress.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.Properties.Resources.resources
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.csproj.GenerateResource.Cache
+C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.FrmLog.resources
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.csprojAssemblyReference.cache
+C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.FrmLog.resources

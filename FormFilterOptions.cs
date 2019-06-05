@@ -41,7 +41,6 @@ namespace LecturaDeArchivos
             // Return values
             List<string> retList = new List<string>();
 
-
             //
             // Get the stored procedures
             var storedProcedures = Utils.GetStoredProceduresFromCurrentDatabase(formMain.RemoteConnection, pDatabase);
@@ -50,14 +49,12 @@ namespace LecturaDeArchivos
             // It gets the tables using the current connection.
             var tables = Utils.GetTablesFromCurrentDatabase(formMain.RemoteConnection, pDatabase);
 
-
             if (Options.Equals("Igual"))
             {
                 //
                 // Filter stored procedures
                 storedProcedures = storedProcedures.Where(sp => sp.ToLower().Equals(Filter.ToLower()))
                                                    .ToList();
-
 
                 //
                 // Filter the tables
@@ -128,7 +125,6 @@ namespace LecturaDeArchivos
                 return;
             }
 
-
             //
             // Clear the log
             richTextBoxLog.Text = string.Empty;
@@ -140,7 +136,7 @@ namespace LecturaDeArchivos
                 //
                 // Test the connection for each databases selected
                 lblStatus.Text = $"Estableciendo conexión con {selecteddb}";
-                if (!formMain.RemoteConnection.TestConnectionnWindowsAuth(formMain.RemoteServer.Name, ref msg, selecteddb))
+                if (!formMain.RemoteConnection.TestConnectionnWindowsAuth(formMain.CurrentServer.Name, ref msg, selecteddb))
                 {
                     lblStatus.Text = msg;
                     MessageBox.Show(msg, "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -149,7 +145,7 @@ namespace LecturaDeArchivos
 
                 //
                 // Write the output in the RichTextBox
-                richTextBoxLog.AppendText($"Servidor: {formMain.RemoteServer.Name}, Base de datos: {selecteddb} {Environment.NewLine}");
+                richTextBoxLog.AppendText($"Servidor: {formMain.CurrentServer.Name}, Base de datos: {selecteddb} {Environment.NewLine}");
 
                 var listResult = ApplyOptions(selecteddb);
 

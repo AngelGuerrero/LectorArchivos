@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace LecturaDeArchivos
 {
@@ -164,6 +163,34 @@ namespace LecturaDeArchivos
 
 
 
+        public DataTable GetUsers(ref string pMessage, ref bool pError)
+        {
+            DataTable table = new DataTable();
+
+            string query = $@"SELECT USUCOD,
+	                                 IdLocalidad										AS USULOC,
+	                                 CASE WHEN	USUPERFIL = 'TODO'		THEN	1
+			                              WHEN	USUPERFIL = 'PLANTA'	THEN	2
+			                              WHEN	USUPERFIL = 'CEDIS'		THEN	3
+			                              WHEN	USUPERFIL = 'TREINTA'	THEN	4
+			                              ELSE	5
+	                                 END												AS USUPERID,
+	                                 USUNOMBRE
+                                   , USUEST
+                                   , USUCRE
+                                   , USUFECCRE
+                                   , USUMOD
+                                   , USUFECMOD
+                                   , ''                                                 AS USUPASSWORD
+                                FROM			segUSUARIO
+                               CROSS JOIN		confSistema
+                                    ";
+
+            return ExecuteQuery(query, ref pMessage, ref pError);
+        }
+
+
+
         /// <summary>
         /// This method gets the databases from the connected server.
         /// 
@@ -183,33 +210,7 @@ namespace LecturaDeArchivos
                               WHERE d.database_id > 4;
                             ";
 
-            try
-            {
-                using (SqlConnection con = new SqlConnection(ConnectionString))
-                {
-                    SqlCommand command = new SqlCommand(query, con);
-                    command.CommandTimeout = 0;
-                    SqlDataReader reader;
-
-                    con.Open();
-                    reader = command.ExecuteReader();
-                    datatable.Load(reader);
-
-                    reader.Close();
-                    con.Close();
-
-                    pMessage = "Databases loaded succesfully.";
-                    pError = false;
-                }
-            }
-            catch (Exception e)
-            {
-                pMessage = $"Error loading databases: {e.Message}";
-                Debug.WriteLine(pMessage);
-                pError = true;
-            }
-
-            return datatable;
+            return ExecuteQuery(query, ref pMessage, ref pError);
         }
 
 
@@ -239,24 +240,6 @@ namespace LecturaDeArchivos
 
 
             return ExecuteQuery(query, ref pMessage, ref pError);
-        }
-
-
-
-        private SqlConnection ConnectWithSQLServerAuth()
-        {
-            ConnectionString = "SQL";
-
-            return new SqlConnection(ConnectionString);
-        }
-
-
-
-        private SqlConnection ConnectWithWindowsAuth()
-        {
-            ConnectionString = "WIN";
-
-            return new SqlConnection(ConnectionString);
         }
 
 

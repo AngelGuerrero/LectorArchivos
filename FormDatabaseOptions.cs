@@ -58,8 +58,8 @@ namespace LecturaDeArchivos
             if (any)
             {
                 GetStoredProceduresFromCurrentDatabase().Where(item => item.ToLower().Contains(sp.ToLower()))
-                                   .ToList()
-                                   .ForEach(item => listView_Procs.Items.Add(item));
+                                                        .ToList()
+                                                        .ForEach(item => listView_Procs.Items.Add(item));
             }
             else
             {
@@ -142,7 +142,7 @@ namespace LecturaDeArchivos
             treeViewTables.ExpandAll();
         }
 
-        private void tabPage_DatabaseTables_Enter(object sender, EventArgs e) => LoadTreeViewDatabase();
+        private void tabPage_DatabaseTables_Enter(object sender, EventArgs e) => FilterTreeView(string.Empty);
 
         private void tabPage_StoredProcedures_Enter(object sender, EventArgs e) => LoadStoredProceduresInListView();
 
@@ -183,7 +183,7 @@ namespace LecturaDeArchivos
 
             if ((e.Shift && e.KeyCode == Keys.Enter))
             {
-                LoadTreeViewDatabase();
+                FilterTreeView(string.Empty);
             }
         }
 
