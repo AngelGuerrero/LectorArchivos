@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.tabPage_DatabaseTables = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.treeViewTables = new System.Windows.Forms.TreeView();
+            this.contextMenuStripTablesProperties = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.verPropiedadesDeLaTablaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTables_Filter = new System.Windows.Forms.TextBox();
             this.tabPage_StoredProcedures = new System.Windows.Forms.TabPage();
             this.listView_Procs = new System.Windows.Forms.ListView();
@@ -45,6 +48,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.tabOptionsProperties.SuspendLayout();
             this.tabPage_DatabaseTables.SuspendLayout();
+            this.contextMenuStripTablesProperties.SuspendLayout();
             this.tabPage_StoredProcedures.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -111,17 +115,31 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.Location = new System.Drawing.Point(180, 32);
+            this.panel3.Location = new System.Drawing.Point(264, 32);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(558, 334);
+            this.panel3.Size = new System.Drawing.Size(474, 334);
             this.panel3.TabIndex = 2;
             // 
             // treeViewTables
             // 
+            this.treeViewTables.ContextMenuStrip = this.contextMenuStripTablesProperties;
             this.treeViewTables.Location = new System.Drawing.Point(8, 32);
             this.treeViewTables.Name = "treeViewTables";
-            this.treeViewTables.Size = new System.Drawing.Size(166, 334);
+            this.treeViewTables.Size = new System.Drawing.Size(250, 334);
             this.treeViewTables.TabIndex = 1;
+            // 
+            // contextMenuStripTablesProperties
+            // 
+            this.contextMenuStripTablesProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verPropiedadesDeLaTablaToolStripMenuItem});
+            this.contextMenuStripTablesProperties.Name = "contextMenuStripTablesProperties";
+            this.contextMenuStripTablesProperties.Size = new System.Drawing.Size(216, 26);
+            // 
+            // verPropiedadesDeLaTablaToolStripMenuItem
+            // 
+            this.verPropiedadesDeLaTablaToolStripMenuItem.Name = "verPropiedadesDeLaTablaToolStripMenuItem";
+            this.verPropiedadesDeLaTablaToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.verPropiedadesDeLaTablaToolStripMenuItem.Text = "Ver propiedades de la tabla";
             // 
             // txtTables_Filter
             // 
@@ -213,6 +231,7 @@
             this.tabOptionsProperties.ResumeLayout(false);
             this.tabPage_DatabaseTables.ResumeLayout(false);
             this.tabPage_DatabaseTables.PerformLayout();
+            this.contextMenuStripTablesProperties.ResumeLayout(false);
             this.tabPage_StoredProcedures.ResumeLayout(false);
             this.tabPage_StoredProcedures.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -236,5 +255,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TreeView treeViewTables;
         private System.Windows.Forms.TextBox txtTables_Filter;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripTablesProperties;
+        private System.Windows.Forms.ToolStripMenuItem verPropiedadesDeLaTablaToolStripMenuItem;
     }
 }

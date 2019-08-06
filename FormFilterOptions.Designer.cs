@@ -34,9 +34,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.radioBtnContains = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -123,6 +123,17 @@
             this.panel1.Size = new System.Drawing.Size(484, 408);
             this.panel1.TabIndex = 3;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(8, 386);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(42, 13);
+            this.lblStatus.TabIndex = 4;
+            this.lblStatus.Text = "Estatus";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -144,15 +155,6 @@
             this.richTextBoxLog.Size = new System.Drawing.Size(470, 207);
             this.richTextBoxLog.TabIndex = 0;
             this.richTextBoxLog.Text = "";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(8, 386);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(42, 13);
-            this.lblStatus.TabIndex = 4;
-            this.lblStatus.Text = "Estatus";
             // 
             // FormFilterOptions
             // 

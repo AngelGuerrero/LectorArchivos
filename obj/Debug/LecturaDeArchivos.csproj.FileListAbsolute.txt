@@ -35,3 +35,16 @@ C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-opt
 C:\Users\lsantiagog\Downloads\LectorArchivos-dev-feature-databases-tree-view-options\obj\Debug\LecturaDeArchivos.FrmLog.resources
 C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.csprojAssemblyReference.cache
 C:\Users\ADMIN\GitHub\NET\LectorArchivos\obj\Debug\LecturaDeArchivos.FrmLog.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\bin\Debug\LecturaDeArchivos.exe.config
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\bin\Debug\LecturaDeArchivos.exe
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\bin\Debug\LecturaDeArchivos.pdb
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.csprojResolveAssemblyReference.cache
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormDataBaseOptions.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormFilterOptions.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormMain.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FormProgress.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.FrmLog.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.Properties.Resources.resources
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.csproj.GenerateResource.Cache
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.exe
+I:\ANGEL RESPALDO\Desarrollos\PRUEBAS\dev_LectorArchivos-master\LectorArchivos-master\obj\Debug\LecturaDeArchivos.pdb

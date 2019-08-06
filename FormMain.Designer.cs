@@ -67,6 +67,8 @@
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.archivoLogDelProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chklbxDataBases = new System.Windows.Forms.CheckedListBox();
             this.contextMenuStripDataBases = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarTodotoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,7 +169,7 @@
             this.lblAuthentication.Location = new System.Drawing.Point(3, 0);
             this.lblAuthentication.MaximumSize = new System.Drawing.Size(0, 25);
             this.lblAuthentication.Name = "lblAuthentication";
-            this.lblAuthentication.Size = new System.Drawing.Size(80, 25);
+            this.lblAuthentication.Size = new System.Drawing.Size(74, 25);
             this.lblAuthentication.TabIndex = 1;
             this.lblAuthentication.Text = "Autenticación:";
             this.lblAuthentication.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,9 +268,9 @@
             // tblLayPanelAuthentication
             // 
             this.tblLayPanelAuthentication.ColumnCount = 3;
-            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.6474F));
-            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.3526F));
-            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 370F));
+            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.64238F));
+            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.35762F));
+            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 373F));
             this.tblLayPanelAuthentication.Controls.Add(this.lblAuthentication, 0, 0);
             this.tblLayPanelAuthentication.Controls.Add(this.lblPassword, 1, 2);
             this.tblLayPanelAuthentication.Controls.Add(this.lblUser, 1, 1);
@@ -289,9 +291,9 @@
             // lblPassword
             // 
             this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPassword.Location = new System.Drawing.Point(89, 58);
+            this.lblPassword.Location = new System.Drawing.Point(83, 58);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(60, 35);
+            this.lblPassword.Size = new System.Drawing.Size(63, 35);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Contraseña:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,9 +302,9 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUser.Location = new System.Drawing.Point(89, 29);
+            this.lblUser.Location = new System.Drawing.Point(83, 29);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(60, 29);
+            this.lblUser.Size = new System.Drawing.Size(63, 29);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Usuario:";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -310,9 +312,9 @@
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(155, 32);
+            this.txtUser.Location = new System.Drawing.Point(152, 32);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(365, 20);
+            this.txtUser.Size = new System.Drawing.Size(368, 20);
             this.txtUser.TabIndex = 4;
             this.txtUser.TextChanged += new System.EventHandler(this.TxtUser_TextChanged);
             // 
@@ -320,9 +322,9 @@
             // 
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(155, 61);
+            this.txtPassword.Location = new System.Drawing.Point(152, 61);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(365, 20);
+            this.txtPassword.Size = new System.Drawing.Size(368, 20);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
@@ -336,9 +338,9 @@
             this.cbxAuthentication.Items.AddRange(new object[] {
             "Windows Authentication",
             "SQL Server Authentication"});
-            this.cbxAuthentication.Location = new System.Drawing.Point(89, 3);
+            this.cbxAuthentication.Location = new System.Drawing.Point(83, 3);
             this.cbxAuthentication.Name = "cbxAuthentication";
-            this.cbxAuthentication.Size = new System.Drawing.Size(431, 21);
+            this.cbxAuthentication.Size = new System.Drawing.Size(437, 21);
             this.cbxAuthentication.TabIndex = 6;
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.CbxAuthentication_SelectedIndexChanged);
             // 
@@ -419,6 +421,7 @@
             this.toolStripMenuItem1,
             this.editarToolStripMenuItem,
             this.verToolStripMenuItem,
+            this.herramientasToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -455,6 +458,22 @@
             this.archivoLogDelProgramaToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.archivoLogDelProgramaToolStripMenuItem.Text = "Archivo &Log del programa";
             this.archivoLogDelProgramaToolStripMenuItem.Click += new System.EventHandler(this.archivoLogDelProgramaToolStripMenuItem_Click);
+            // 
+            // herramientasToolStripMenuItem
+            // 
+            this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem});
+            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.herramientasToolStripMenuItem.Text = "&Herramientas";
+            // 
+            // generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem
+            // 
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Enabled = false;
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Name = "generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem";
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Size = new System.Drawing.Size(323, 22);
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Text = "Generar inserts de las localidades seleccionadas";
+            this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Click += new System.EventHandler(this.generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem_Click);
             // 
             // chklbxDataBases
             // 
@@ -594,6 +613,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lector de archivos";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.statusStrip.ResumeLayout(false);
@@ -666,6 +686,8 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.ToolStripMenuItem abrirDirectorioDeGeneraciónDeInsertsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem;
     }
 }
 

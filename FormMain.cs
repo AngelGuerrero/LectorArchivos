@@ -76,7 +76,9 @@ namespace LecturaDeArchivos
 
         public List<string> SelectedDatabasesList { get; set; } = new List<string>();
 
+
         public List<Server> listaServidores { get; private set; } = new List<Server>();
+
 
         public string path { get; } = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\INSERTS\\{DateTime.Now.ToString("yyyyMMdd_hhmmss")}_Localidades";
 
@@ -191,8 +193,7 @@ namespace LecturaDeArchivos
             if (multiplesServidoresToolStripMenuItem.Checked)
             {
                 listaServidores.Clear();
-                multiplesServidoresToolStripMenuItem.Text = "Cargar lista de localidades y sus servidores";
-                multiplesServidoresToolStripMenuItem.Checked = false;
+                IsReadyServerList();
                 MessageBox.Show("Se borró la lista de servidores correctamente", "Lista de servidores", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -220,13 +221,29 @@ namespace LecturaDeArchivos
                     }
                 }
 
-                multiplesServidoresToolStripMenuItem.Checked = true;
-                multiplesServidoresToolStripMenuItem.Text = "Lista de servidores cargada";
+                IsReadyServerList();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Error leyendo el archivo de servidores", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+        }
+
+
+        private void IsReadyServerList()
+        {
+            if (listaServidores.Count <= 0 || multiplesServidoresToolStripMenuItem.Checked)
+            {
+                generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Enabled = false;
+                multiplesServidoresToolStripMenuItem.Text = "Cargar lista de localidades y sus servidores";
+                multiplesServidoresToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem.Enabled = true;
+                multiplesServidoresToolStripMenuItem.Checked = true;
+                multiplesServidoresToolStripMenuItem.Text = "Lista de servidores cargada";
             }
         }
 
@@ -572,23 +589,7 @@ namespace LecturaDeArchivos
             ///     Inicia a generar los inserts para los usuarios de las localidades del archivo cargado
             if ((e.Control && e.Shift && (e.KeyCode == Keys.U)))
             {
-                if (listaServidores.Count <= 0)
-                {
-                    MessageBox.Show("No se ha cargado la lista de localidades", "Error al obtener los inserts", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                toolStripStatusLabel.Text = "Generando scripts de las localidades para los usuarios...";
-
-                ExecBackgroundWorker(
-                (arg) =>
-                {
-                    GetUsersFromServerListLoaded();
-                }
-                , (arg) => MessageBox.Show("Proceso terminado", "Generación de inserts", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                , "Listo."
-                );
-
+                generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem_Click(sender, e);
             }
         }
 
@@ -671,5 +672,25 @@ namespace LecturaDeArchivos
         private void archivoLogDelProgramaToolStripMenuItem_Click(object sender, EventArgs e) => ViewLog();
 
         private void abrirDirectorioDeGeneraciónDeInsertsToolStripMenuItem_Click(object sender, EventArgs e) => Process.Start("explorer.exe", path);
+
+        private void generarInsertsDeLasLocalidadesSeleccionadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listaServidores.Count <= 0)
+            {
+                MessageBox.Show("No se ha cargado la lista de localidades", "Error al obtener los inserts", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            toolStripStatusLabel.Text = "Generando scripts de las localidades para los usuarios...";
+
+            ExecBackgroundWorker(
+            (arg) =>
+            {
+                GetUsersFromServerListLoaded();
+            }
+            , (arg) => MessageBox.Show("Proceso terminado", "Generación de inserts", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            , "Listo."
+            );
+        }
     }
 }
