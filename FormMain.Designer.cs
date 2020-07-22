@@ -98,7 +98,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 649);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(549, 22);
+            this.statusStrip.Size = new System.Drawing.Size(564, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -136,7 +136,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(533, 29);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(548, 29);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // lblServer
@@ -146,7 +146,7 @@
             this.lblServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServer.Location = new System.Drawing.Point(3, 0);
             this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(79, 29);
+            this.lblServer.Size = new System.Drawing.Size(94, 29);
             this.lblServer.TabIndex = 0;
             this.lblServer.Text = "Servidor:";
             this.lblServer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -154,7 +154,7 @@
             // txtServer
             // 
             this.txtServer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtServer.Location = new System.Drawing.Point(88, 3);
+            this.txtServer.Location = new System.Drawing.Point(103, 3);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(442, 20);
             this.txtServer.TabIndex = 1;
@@ -167,7 +167,7 @@
             this.lblAuthentication.Location = new System.Drawing.Point(3, 0);
             this.lblAuthentication.MaximumSize = new System.Drawing.Size(0, 25);
             this.lblAuthentication.Name = "lblAuthentication";
-            this.lblAuthentication.Size = new System.Drawing.Size(80, 25);
+            this.lblAuthentication.Size = new System.Drawing.Size(88, 25);
             this.lblAuthentication.TabIndex = 1;
             this.lblAuthentication.Text = "Autenticación:";
             this.lblAuthentication.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,7 +179,7 @@
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(549, 57);
+            this.lblTitulo.Size = new System.Drawing.Size(564, 57);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Carga de procedimientos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,13 +195,13 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 619);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(549, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(564, 30);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // btnAccept
             // 
             this.btnAccept.Enabled = false;
-            this.btnAccept.Location = new System.Drawing.Point(466, 3);
+            this.btnAccept.Location = new System.Drawing.Point(481, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 8;
@@ -212,7 +212,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(385, 3);
+            this.btnCancel.Location = new System.Drawing.Point(400, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -223,7 +223,7 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(304, 3);
+            this.btnOpenFile.Location = new System.Drawing.Point(319, 3);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
             this.btnOpenFile.TabIndex = 7;
@@ -234,7 +234,7 @@
             // btnConnect
             // 
             this.btnConnect.AutoSize = true;
-            this.btnConnect.Location = new System.Drawing.Point(214, 3);
+            this.btnConnect.Location = new System.Drawing.Point(229, 3);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(84, 23);
             this.btnConnect.TabIndex = 6;
@@ -248,7 +248,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 57);
+            this.panel1.Size = new System.Drawing.Size(564, 57);
             this.panel1.TabIndex = 5;
             // 
             // lblLine_1
@@ -260,7 +260,7 @@
             this.lblLine_1.Location = new System.Drawing.Point(10, 84);
             this.lblLine_1.Margin = new System.Windows.Forms.Padding(0);
             this.lblLine_1.Name = "lblLine_1";
-            this.lblLine_1.Size = new System.Drawing.Size(525, 2);
+            this.lblLine_1.Size = new System.Drawing.Size(540, 2);
             this.lblLine_1.TabIndex = 8;
             // 
             // tblLayPanelAuthentication
@@ -268,7 +268,7 @@
             this.tblLayPanelAuthentication.ColumnCount = 3;
             this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.6474F));
             this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.3526F));
-            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 370F));
+            this.tblLayPanelAuthentication.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 371F));
             this.tblLayPanelAuthentication.Controls.Add(this.lblAuthentication, 0, 0);
             this.tblLayPanelAuthentication.Controls.Add(this.lblPassword, 1, 2);
             this.tblLayPanelAuthentication.Controls.Add(this.lblUser, 1, 1);
@@ -283,15 +283,15 @@
             this.tblLayPanelAuthentication.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.18033F));
             this.tblLayPanelAuthentication.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tblLayPanelAuthentication.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblLayPanelAuthentication.Size = new System.Drawing.Size(523, 93);
+            this.tblLayPanelAuthentication.Size = new System.Drawing.Size(538, 93);
             this.tblLayPanelAuthentication.TabIndex = 6;
             // 
             // lblPassword
             // 
             this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPassword.Location = new System.Drawing.Point(89, 58);
+            this.lblPassword.Location = new System.Drawing.Point(97, 58);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(60, 35);
+            this.lblPassword.Size = new System.Drawing.Size(66, 35);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Contraseña:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,9 +300,9 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUser.Location = new System.Drawing.Point(89, 29);
+            this.lblUser.Location = new System.Drawing.Point(97, 29);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(60, 29);
+            this.lblUser.Size = new System.Drawing.Size(66, 29);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Usuario:";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -310,9 +310,9 @@
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(155, 32);
+            this.txtUser.Location = new System.Drawing.Point(169, 32);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(365, 20);
+            this.txtUser.Size = new System.Drawing.Size(366, 20);
             this.txtUser.TabIndex = 4;
             this.txtUser.TextChanged += new System.EventHandler(this.TxtUser_TextChanged);
             // 
@@ -320,9 +320,9 @@
             // 
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(155, 61);
+            this.txtPassword.Location = new System.Drawing.Point(169, 61);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(365, 20);
+            this.txtPassword.Size = new System.Drawing.Size(366, 20);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
@@ -336,9 +336,9 @@
             this.cbxAuthentication.Items.AddRange(new object[] {
             "Windows Authentication",
             "SQL Server Authentication"});
-            this.cbxAuthentication.Location = new System.Drawing.Point(89, 3);
+            this.cbxAuthentication.Location = new System.Drawing.Point(97, 3);
             this.cbxAuthentication.Name = "cbxAuthentication";
-            this.cbxAuthentication.Size = new System.Drawing.Size(431, 21);
+            this.cbxAuthentication.Size = new System.Drawing.Size(438, 21);
             this.cbxAuthentication.TabIndex = 6;
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.CbxAuthentication_SelectedIndexChanged);
             // 
@@ -422,7 +422,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(549, 24);
+            this.menuStrip.Size = new System.Drawing.Size(564, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -437,7 +437,7 @@
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarToolStripMenuItem.Text = "&Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
@@ -464,7 +464,7 @@
             this.chklbxDataBases.FormattingEnabled = true;
             this.chklbxDataBases.Location = new System.Drawing.Point(3, 16);
             this.chklbxDataBases.Name = "chklbxDataBases";
-            this.chklbxDataBases.Size = new System.Drawing.Size(525, 93);
+            this.chklbxDataBases.Size = new System.Drawing.Size(540, 93);
             this.chklbxDataBases.Sorted = true;
             this.chklbxDataBases.TabIndex = 11;
             this.chklbxDataBases.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chklbxDataBases_ItemCheck);
@@ -505,7 +505,7 @@
             this.chklbxFiles.HorizontalScrollbar = true;
             this.chklbxFiles.Location = new System.Drawing.Point(3, 16);
             this.chklbxFiles.Name = "chklbxFiles";
-            this.chklbxFiles.Size = new System.Drawing.Size(525, 99);
+            this.chklbxFiles.Size = new System.Drawing.Size(540, 99);
             this.chklbxFiles.Sorted = true;
             this.chklbxFiles.TabIndex = 12;
             this.chklbxFiles.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chklbxFiles_ItemCheck);
@@ -517,7 +517,7 @@
             this.groupBox1.Controls.Add(this.chklbxDataBases);
             this.groupBox1.Location = new System.Drawing.Point(8, 248);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(531, 112);
+            this.groupBox1.Size = new System.Drawing.Size(546, 112);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bases de datos";
@@ -530,7 +530,7 @@
             this.groupBox2.Controls.Add(this.chklbxFiles);
             this.groupBox2.Location = new System.Drawing.Point(8, 362);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(531, 118);
+            this.groupBox2.Size = new System.Drawing.Size(546, 118);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Archivos seleccionados";
@@ -542,7 +542,7 @@
             this.groupBox3.Controls.Add(this.txtLog);
             this.groupBox3.Location = new System.Drawing.Point(8, 488);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(531, 115);
+            this.groupBox3.Size = new System.Drawing.Size(546, 115);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Resultado";
@@ -555,7 +555,7 @@
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(525, 96);
+            this.txtLog.Size = new System.Drawing.Size(540, 96);
             this.txtLog.TabIndex = 0;
             this.txtLog.Text = "";
             // 
@@ -566,7 +566,7 @@
             this.groupBox4.Controls.Add(this.tblLayPanelAuthentication);
             this.groupBox4.Location = new System.Drawing.Point(10, 131);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(529, 112);
+            this.groupBox4.Size = new System.Drawing.Size(544, 112);
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Conexión con el servidor";
@@ -576,7 +576,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(549, 671);
+            this.ClientSize = new System.Drawing.Size(564, 671);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.lblLine_1);
             this.Controls.Add(this.groupBox3);
